@@ -1,5 +1,14 @@
+@font-face {
+    font-family: "Ginger Regular";
+    src: local("ginger-regular"), url(./assets/fonts/ginger-regular.woff) format("truetype");
+}
+@font-face {
+    font-family: "league-spartan";
+    src: local("league-spartan"), url(./assets/fonts/league-spartan.bold.ttf) format("truetype");
+}
+
 * {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Ginger Regular';
 }
 
 html, body {
