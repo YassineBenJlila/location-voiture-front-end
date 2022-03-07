@@ -70,27 +70,7 @@ $rose: rgb(217, 2, 102);
     filter: drop-shadow(0 0 5px rgba($black, .7) );
 }
 
-@media screen and (max-width:900px) { 
-    .Header {
-        top: 10%;
-        left: 8vw;
-        height: 90vh;
-        margin: 0 .5rem;
-    }
-    .call-to-action {
-        font-size: 1rem;
-        margin-top: 2rem;
-    }
-    .head-pic {
-        max-width: 90%;
-        top: 40% !important;
-        right: auto;
-        // left: 5%;
-        float: none;
-    }
-}
-
-.about, .services {
+.about, .services, .contact {
     margin-left: 50%;
     transform: translateX(-50%);
     margin-bottom: 10rem;
@@ -142,15 +122,18 @@ p, h3, span, .title2, .cars, ul {
     right: 40px;
   }
 
-  .show {
+.show {
     opacity: 1;
     top: 0;
-  }
-  .hide {
+}
+.hide {
     opacity: 0.5;
     bottom: 100px;
-  }
-  
+}
+
+.services > ul {
+    margin-left: -2rem;
+}  
 .services > ul > li {
     list-style: none;
     font-size: 1.5rem;
@@ -190,10 +173,45 @@ p, h3, span, .title2, .cars, ul {
     }
 }
 
+.contact {
+    margin-bottom: 6rem;
+}
+.contacts {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-top: 3rem;
+    margin-left: -2rem;
+}
 
+.contact-icon {
+    max-width: 26px;
+    margin-right: .5rem;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+}
 
 
 @media screen and (max-width:900px) { 
+    .Header {
+        top: 10%;
+        left: 8vw;
+        height: 90vh;
+        margin: 0 .5rem;
+    }
+    .call-to-action {
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+    .head-pic {
+        max-width: 90%;
+        top: 40% !important;
+        right: auto;
+        // left: 5%;
+        float: none;
+    }
     .services .cars .img-container {
         max-width: 200px;
     }
@@ -236,5 +254,11 @@ p, h3, span, .title2, .cars, ul {
     .img-desc {
         max-width: 100px;
         font-size: .8rem
+    }
+    .contacts {
+        flex-direction: column;
+    }
+    .contact-item {
+        margin-bottom: 1rem;
     }
 }

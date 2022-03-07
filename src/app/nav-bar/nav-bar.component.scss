@@ -178,6 +178,12 @@ nav {
     }
 }
 
+@media screen and (max-width:650px) {
+    .nav-links {
+        margin-left: -2rem;
+    }
+}
+
 @media screen and (max-width:560px) { 
     .nav-links, .nav-links-con {
         margin: 0 .5rem;
