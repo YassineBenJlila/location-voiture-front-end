@@ -4,12 +4,17 @@ $rose: rgb(217, 2, 102);
 nav {
     margin: .5rem;
     margin-top: 16px;
+    position: sticky;
+    top: 16px;
+    z-index: 100;
 }
 
 .brand {
     color: $black;
     display: inline;
     width: 100%;
+    margin-left: .2rem;
+    font-weight: 600;
 }
 
 .nav-links, .nav-links-con {
@@ -49,6 +54,7 @@ nav {
     opacity: 0;
 
     position: fixed;
+    z-index: 20;
     height: 90vh;
     inset: 10px;
     background: whitesmoke;
@@ -74,13 +80,14 @@ nav {
 
 //------- hamburger btn --------
 .checkbox {
-    position: absolute;
+    outline: solid 1px $rose;
+    position: fixed;
     display: none;
     height: 32px;
     width: 32px;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
+    top: 30px;
+    right: 40px;
+    z-index: 100;
     opacity: 0;
     cursor: pointer;
   }
@@ -161,6 +168,9 @@ nav {
 //------------------
 
 @media screen and (max-width:900px) { 
+    .nav-links-con > .nav-link {
+        margin: 0 1vw;
+    }
     .nav-link {
         text-decoration: none;
         color: $black;
@@ -173,9 +183,15 @@ nav {
         margin: 0 .5rem;
         display: none;
     }
-
+    .brand {
+        position: fixed;
+        top: 36px;
+        left: 26px;
+        z-index: 100;
+    }
     .checkbox, .hamburger-lines .line {
         display: block;
+        z-index: 201;
     }
     .hamburger-lines {
         pointer-events: all;

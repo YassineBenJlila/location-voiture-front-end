@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiServiceService } from 'src/app/services/ui-service.service';
 
 @Component({
   selector: 'app-public-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private uiService:UiServiceService) { }
 
   ngOnInit(): void {
+    this.uiService.IntersectSetup();
   }
 
 }
