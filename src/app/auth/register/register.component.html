@@ -1,1 +1,68 @@
-<p>register works!</p>
+<div class="container">
+    <form #templateForm="ngForm" (ngSubmit)="onSubmit(templateForm)">
+
+        <div class="personal">
+            <div class="col-2">
+                <p>
+                    <label for="firstname">Prenom <samp class="required">*</samp> </label>
+                    <input type="text" id="firstname" name="firstname" ngModel required>
+                </p>
+                <p>
+                    <label for="lastname">Nom <samp class="required">*</samp> </label>
+                    <input type="text" id="lastname" name="lastname" ngModel>
+                </p>
+            </div>
+
+            <p>
+                <label for="email">Email <samp class="required">*</samp> </label>
+                <input type="text" id="email" name="email" ngModel>
+            </p>
+
+            <p>
+                <label for="state">Date de naissance <samp class="required">*</samp> </label>
+                <input type="date" class="form-control" name="birthDate" ngModel>
+            </p>
+
+            <div ngModelGroup="address">
+
+                <p>
+                    <label for="address">Adresse <samp class="required">*</samp> </label>
+                    <input type="text" class="form-control" name="address" ngModel>
+                </p>
+    
+                <p>
+                    <label for="city">Tel <samp class="required">*</samp> </label>
+                    <input type="text" class="form-control" name="tel" ngModel>
+                </p>
+    
+            </div>
+        </div>
+
+        <div class="creds">
+            <p>
+                <label for="login">Login <samp class="required">*</samp> </label>
+                <input type="text" id="login" name="login" ngModel>
+            </p>
+
+            <p>
+                <label for="pass">Mot de passe <samp class="required">*</samp> </label>
+                <input type="password" id="pass" name="pass" ngModel>
+            </p>
+
+            <p>
+                <label for="pass-conf">Confirmez le mot de passe <samp class="required">*</samp> </label>
+                <input type="password" id="pass-conf" name="pass-conf" ngModel>
+            </p>
+        </div>
+        
+        
+
+        <p>
+            <button class="submit call-to-action" type="submit">S'inscrire</button>
+            <button class="submit call-to-action" type="reset">Réinitialiser</button>
+        </p>
+        <div>
+        </div>
+
+    </form>
+</div>
