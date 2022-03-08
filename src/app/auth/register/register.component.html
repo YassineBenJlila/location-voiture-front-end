@@ -20,22 +20,19 @@
 
             <p>
                 <label for="state">Date de naissance <samp class="required">*</samp> </label>
-                <input type="date" class="form-control" name="birthDate" ngModel>
+                <input type="date" class="form-control" min="1930-01-01" name="birthDate" id="birthDate" ngModel>
             </p>
 
-            <div ngModelGroup="address">
+            <p>
+                <label for="address">Adresse <samp class="required">*</samp> </label>
+                <input type="text" class="form-control" name="address" ngModel>
+            </p>
 
-                <p>
-                    <label for="address">Adresse <samp class="required">*</samp> </label>
-                    <input type="text" class="form-control" name="address" ngModel>
-                </p>
-    
-                <p>
-                    <label for="city">Tel <samp class="required">*</samp> </label>
-                    <input type="text" class="form-control" name="tel" ngModel>
-                </p>
-    
-            </div>
+            <p>
+                <label for="tel">Numéro de téléphone <samp class="required">*</samp> </label>
+                <input type="text" class="form-control" name="tel" ngModel>
+            </p>
+
         </div>
 
         <div class="creds">
@@ -54,8 +51,8 @@
                 <input type="password" id="pass-conf" name="pass-conf" ngModel>
             </p>
         </div>
-        
-        
+
+
 
         <p>
             <button class="submit call-to-action" type="submit">S'inscrire</button>
