@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container">
+  <form #templateForm="ngForm" (ngSubmit)="onLogin(templateForm)">
+
+      <div class="creds">
+          <p>
+              <label for="login">Login</label>
+              <input type="text" id="login" name="login" ngModel>
+          </p>
+
+          <p>
+              <label for="pass">Mot de passe</label>
+              <input type="password" id="pass" name="pass" ngModel>
+          </p>
+      </div>
+
+
+
+      <p>
+          <button class="submit call-to-action" type="submit">Connecter</button>
+      </p>
+
+  </form>
+</div>
