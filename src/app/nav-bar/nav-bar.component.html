@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <input class="checkbox" type="checkbox" name="" id="" />
+
+    <div class="brand">LCR</div>
+    <div class="nav-links">
+        <a class="nav-link" href="/welcome#about" routerLinkActive="router-link-active" >A propos</a>
+        <a class="nav-link" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
+        <a class="nav-link" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+    </div>
+    <div class="nav-links-con">
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
+        <a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+    </div>
+
+    <div class="mobile-nav-links">
+        <a class="mobile-nav-link" href="/welcome#about" routerLinkActive="router-link-active">A propos</a>
+        <a class="mobile-nav-link" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
+        <a class="nav-link" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+
+        <a class="mobile-nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
+        <a class="mobile-nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+    </div>
+
+    <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+    </div>
+</nav>

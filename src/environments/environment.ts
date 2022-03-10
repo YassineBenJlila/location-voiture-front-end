@@ -1,9 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+const backEndURL = 'http://localhost:8080';
 export const environment = {
-  production: false
+  production: false,
+  API: backEndURL+'/api',
+  AUTH_API: backEndURL+'/api/auth/',
+  TOKEN_KEY: 'auth-token',
+  USER_KEY: 'auth-user',
 };
 
 /*
