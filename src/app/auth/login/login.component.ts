@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onLogin() {
+  onLogin(form: any) {
     const { username, password } = this.form;
     this.authService.login(username, password).subscribe({
       next: data => {
