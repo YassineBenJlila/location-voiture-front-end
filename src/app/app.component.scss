@@ -9,7 +9,12 @@ $blue: rgb(109,201,255);
     
     background: $blue;
     background: linear-gradient(180deg, $blue 0%, rgba(74,188,255,0) 80%);
+}
 
+.container {
+    display: block;
+    position: relative;
+    margin: 0 1rem;
 }
 
 h1, h3 {
@@ -22,4 +27,10 @@ h1 {
 }
 h3 {
     font-size: 2rem;
+}
+
+@media screen and (max-width:560px) {
+    .container {
+        margin-top: 75px;
+    }
 }

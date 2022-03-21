@@ -1,1 +1,61 @@
-<p>board-user works!</p>
+<div class="container">
+    <h1>Bienvenue <span class="user-name">User</span> </h1>
+    <div class="grid">
+        <div *ngFor="let car of cars" (click)="showModal(car.id)" class="car-container">
+            <img class="car-img" src="{{car.photo}}" alt="{{car.model}}">
+            <p class="car-model">{{car.model}} : {{car.price}}/jour</p>
+            <p class="car-description">{{car.description}}</p>
+        </div>
+    </div>
+
+    <!-- dialog with form -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-form-preview">
+              <img class="car-img" src="{{cars[car_id]?.photo}}" alt="{{cars[car_id]?.model}}">
+              <p *ngIf="cars[car_id]" class="car-model">{{cars[car_id]?.model}} : {{cars[car_id]?.price}}/jour</p>
+          </div>
+          <div class="modal-form">
+            <form #templateForm="ngForm">
+
+                <div class="personal">
+                    Periode:
+                    <div class="col-2">
+                        <p>
+                            <label for="state">De <samp class="required">*</samp> </label>
+                        <input type="date" class="form-control" name="fromDate" id="fromDate" ngModel>
+                        </p>
+                        <p>
+                            <label for="state">Jusqu'à <samp class="required">*</samp> </label>
+                        <input type="date" class="form-control" name="toDate" id="toDate" ngModel>
+                        </p>
+                    </div>
+        
+                    <p>
+                        <label for="address">Région <samp class="required">*</samp> </label>
+                        <!-- <input type="text" class="form-control" name="address" ngModel> -->
+                        <select name="region" id="region">
+                            <option value="">Veuillez sélectionner Une région</option>
+                            <option *ngFor="let region of regions" value="{{region.id}}">{{region.label}}</option>
+                        </select>
+                    </p>
+        
+        
+                </div>        
+        
+                <p>
+                    <button class="submit call-to-action" type="submit">Réservez</button>
+                    <button class="submit call-to-action" type="reset">Réinitialiser</button>
+                </p>
+                <div>
+                </div>
+        
+            </form>
+          </div>
+        </div>
+      
+      </div>
+</div>
