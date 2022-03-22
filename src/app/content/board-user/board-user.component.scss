@@ -282,4 +282,10 @@ select *:nth-child(2n) {
     form {
         width: 90vw;
     }
+    .col-2 {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: space-around;
+        justify-items: stretch;
+    }
 }
