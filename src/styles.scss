@@ -17,15 +17,14 @@ $blue: rgb(109,201,255);
 * {
     font-family: 'Ginger Regular';
     scroll-behavior: smooth;
-
 }
 
 html, body {
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden !important;
     scroll-behavior: smooth;
     margin: 0;
+    overflow-x: hidden !important;
 }
 
 .show {

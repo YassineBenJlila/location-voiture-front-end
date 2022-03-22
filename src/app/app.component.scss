@@ -33,4 +33,10 @@ h3 {
     .container {
         margin-top: 75px;
     }
+    .contacts {
+        flex-direction: column;
+    }
+    .contact-item {
+        margin-bottom: 1rem;
+    }
 }
