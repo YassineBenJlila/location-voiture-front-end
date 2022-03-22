@@ -106,6 +106,7 @@ $blue: rgb(109,201,255);
     padding: 20px 30px;
     border: 1px solid #888;
     width: 55vw;
+    border-radius: 5px;
     transform: scale(0.8);
     transition: transform 150ms;
   }
@@ -162,6 +163,7 @@ $blue: rgb(109,201,255);
     background: linear-gradient(to top, #feada6 0%, #f5efef 100%);
     z-index: 0;
     overflow: hidden;
+    border-radius: 5px;
     border-bottom-right-radius: 40%;
     border-bottom-left-radius: 40%;
     filter: drop-shadow(0 3px 10px rgba(black, .2));
