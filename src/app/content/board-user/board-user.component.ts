@@ -32,10 +32,10 @@ export class BoardUserComponent implements OnInit {
         id: id++, model: 'Range Rover', photo: this.baseUrl + 'rangerover.png', price: '300dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Zuzuki', photo: this.baseUrl + 'zuzuki.png', price: '150dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Zuzuki', photo: this.baseUrl + 'zuzuki.png', price: '100dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Toyota Camry', photo: this.baseUrl + 'toyota_camry.png', price: '150dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Toyota Camry', photo: this.baseUrl + 'toyota_camry.png', price: '120dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
         id: id++, model: 'VW Golf 8', photo: this.baseUrl + 'vw_golf8.png', price: '250dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
@@ -44,7 +44,7 @@ export class BoardUserComponent implements OnInit {
         id: id++, model: 'Porsche', photo: this.baseUrl + 'porsche.png', price: '500dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Mercedes G Class', photo: this.baseUrl + 'mercedes_Gclass.png', price: '350dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Mercedes G Class', photo: this.baseUrl + 'mercedes_Gclass.png', price: '400dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
         id: id++, model: 'BMW M3', photo: this.baseUrl + 'BMW_m3.png', price: '350dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'

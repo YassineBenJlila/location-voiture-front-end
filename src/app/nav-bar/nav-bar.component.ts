@@ -12,4 +12,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hideMenu() {
+    (document.querySelector('.checkbox') as HTMLInputElement).checked = false;
+  }
 }

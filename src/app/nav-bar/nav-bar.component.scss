@@ -1,5 +1,8 @@
+//Colors
 $black: black;
+$white: white;
 $rose: rgb(217, 2, 102);
+$blue: rgb(109,201,255);
 
 nav {
     margin: .5rem;
@@ -7,12 +10,14 @@ nav {
     position: sticky;
     top: 16px;
     z-index: 100;
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+    // background-color: rgba(white, .1);
 }
 
 .brand {
     color: $black;
     display: inline;
-    width: 100%;
     margin-left: .2rem;
     font-weight: 600;
 }
@@ -185,6 +190,9 @@ nav {
 }
 
 @media screen and (max-width:560px) { 
+    nav {
+        backdrop-filter: none;
+    }
     .nav-links, .nav-links-con {
         margin: 0 .5rem;
         display: none;
