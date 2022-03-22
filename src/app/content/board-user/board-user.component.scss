@@ -29,7 +29,7 @@ $blue: rgb(109,201,255);
     justify-content: space-evenly;
     align-items: center;
 
-    border: solid 1px $blue;
+    // border: solid 1px $blue;
     border-radius: 3px;
     overflow: hidden;
     cursor: pointer;
@@ -106,6 +106,8 @@ $blue: rgb(109,201,255);
     padding: 20px 30px;
     border: 1px solid #888;
     width: 55vw;
+    transform: scale(0.8);
+    transition: transform 150ms;
   }
   
   /* The Close Button */
@@ -150,7 +152,7 @@ $blue: rgb(109,201,255);
 .modal-content::before {
     content: '';
     position: absolute;
-    top: 60px;
+    top: 0;
     left: auto;
     padding: 30px;
     margin-left: -30px;

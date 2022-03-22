@@ -26,7 +26,7 @@
                     <div class="col-2">
                         <p>
                             <label for="state">De <samp class="required">*</samp> </label>
-                        <input type="date" class="form-control" name="fromDate" id="fromDate" ngModel>
+                        <input type="date" class="form-control" min="today()" name="fromDate" id="fromDate" (change)="maxDate()" ngModel>
                         </p>
                         <p>
                             <label for="state">Jusqu'à <samp class="required">*</samp> </label>

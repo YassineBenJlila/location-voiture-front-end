@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-board-user',
@@ -75,32 +75,56 @@ export class BoardUserComponent implements OnInit {
 
     // Get the <span> element that closes the modal
     var modal = document.getElementById("myModal") as HTMLDivElement;
+    var modal_content = document.querySelector(".modal-content") as HTMLDivElement;
     var span = document.getElementsByClassName("close")[0] as HTMLSpanElement;
     span.onclick = function () {
+      modal_content.style.transform = "scale(0.8)";
       modal.style.opacity = "0";
       modal.style.pointerEvents = "none";
     }
+
+    this.minDate();    
 
   }
 
   showModal(id: any): void {
     // document.querySelector("#modal-dialog")?.showModal();
-    console.log(id);
+    // console.log(id);
     this.car_id = id;
 
     // Get the modal
     var modal = document.getElementById("myModal") as HTMLDivElement;
+    var modal_content = document.querySelector(".modal-content") as HTMLDivElement;
 
     // When the user clicks the button, open the modal 
     modal.style.opacity = "1";
     modal.style.pointerEvents = "auto";
+    modal_content.style.transform = "scale(1)";
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
+        modal_content.style.transform = "scale(0.8)";
         modal.style.opacity = "0";
         modal.style.pointerEvents = "none";
       }
     }
+  }
+
+  minDate() {
+    var today: any;
+    today = new Date();
+    today = today.getFullYear()+'-'+("0"+(today.getMonth()+1)).slice(-2)+'-'+("0"+today.getDate()).slice(-2);
+    (document.getElementById("fromDate") as HTMLInputElement)?.setAttribute("min", today);
+    (document.getElementById("toDate") as HTMLInputElement)?.setAttribute("min", today);
+  }
+
+  maxDate() {
+    var minDate = (document.getElementById("fromDate") as HTMLInputElement)?.value;
+    var toDate = (document.getElementById("toDate") as HTMLInputElement);
+    toDate?.setAttribute("min", minDate);
+    if (minDate > toDate.value)
+    toDate.value = minDate;
+    // console.log(minDate);
   }
 }
