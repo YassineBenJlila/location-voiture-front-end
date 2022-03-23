@@ -1,5 +1,10 @@
 <div class="container">
-    <h1>Bienvenue <span class="user-name">User</span> </h1>
+    <div class="top-section">
+        <h1>Bienvenue <span class="user-name">{{username}}</span> </h1>
+        <input class="search" placeholder="Recherche" type="search">
+
+
+    </div>
     <div class="grid">
         <div *ngFor="let car of cars" (click)="showModal(car.id)" class="car-container">
             <img class="car-img" src="{{car.photo}}" alt="{{car.model}}">
@@ -13,56 +18,74 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="modal-form-preview">
-              <img class="car-img" src="{{cars[car_id]?.photo}}" alt="{{cars[car_id]?.model}}">
-              <p *ngIf="cars[car_id]" class="car-model">{{cars[car_id]?.model}} : {{cars[car_id]?.price}}/jour</p>
-          </div>
-          <div class="modal-form">
-            <form #templateForm="ngForm">
+            <span class="close">&times;</span>
+            <div class="modal-form-preview">
+                <img class="car-img" src="{{cars[car_id]?.photo}}" alt="{{cars[car_id]?.model}}">
+                <p *ngIf="cars[car_id]" class="car-model">{{cars[car_id]?.model}} : {{cars[car_id]?.price}}/jour</p>
+            </div>
+            <div class="modal-form">
+                <form #templateForm="ngForm">
 
-                <div class="personal">
-                    Periode:
-                    <div class="col-2">
+                    <div class="personal">
+                        Periode:
+                        <div class="col-2">
+                            <p>
+                                <label for="state">De <samp class="required">*</samp> </label>
+                                <input type="date" class="form-control" min="today()" name="fromDate" id="fromDate"
+                                    (change)="maxDate()" ngModel>
+                            </p>
+                            <p>
+                                <label for="state">Jusqu'à <samp class="required">*</samp> </label>
+                                <input type="date" class="form-control" name="toDate" id="toDate" ngModel>
+                            </p>
+                        </div>
+
                         <p>
-                            <label for="state">De <samp class="required">*</samp> </label>
-                        <input type="date" class="form-control" min="today()" name="fromDate" id="fromDate" (change)="maxDate()" ngModel>
+                            <label for="address">Région <samp class="required">*</samp> </label>
+                            <!-- <input type="text" class="form-control" name="address" ngModel> -->
+                            <select name="region" id="region">
+                                <option value="">Veuillez sélectionner Une région</option>
+                                <option *ngFor="let region of regions" value="{{region.id}}">{{region.label}}</option>
+                            </select>
                         </p>
-                        <p>
-                            <label for="state">Jusqu'à <samp class="required">*</samp> </label>
-                        <input type="date" class="form-control" name="toDate" id="toDate" ngModel>
+                        <p id="paiement-container">
+                            <label for="paiement">mode de paiement <samp class="required">*</samp> </label>
+                            <span class="paiement-container">
+                                <span class="paiement-option-cont"> 
+                                    <input type="radio" name="paiement" id="v-bancaires"> <label for="v-bancaires">Virement bancaires</label>
+                                </span>
+                                <span class="paiement-option-cont"> 
+                                    <input type="radio" name="paiement" id="cheque"> <label for="cheque">paiement en chèque</label>
+                                </span>
+                                <span class="paiement-option-cont">
+                                    <input type="radio" name="paiement" id="especes"> <label for="especes">paiement en espèces lors de la livraison</label>
+                                </span>
+                            </span>
                         </p>
+
+
                     </div>
-        
-                    <p>
-                        <label for="address">Région <samp class="required">*</samp> </label>
-                        <!-- <input type="text" class="form-control" name="address" ngModel> -->
-                        <select name="region" id="region">
-                            <option value="">Veuillez sélectionner Une région</option>
-                            <option *ngFor="let region of regions" value="{{region.id}}">{{region.label}}</option>
-                        </select>
+
+                    <p class="col-2">
+                        <button class="submit call-to-action" [routerLink]="['/reservations']" routerLinkActive="router-link-active"  type="submit">Réservez</button>
+                        <button class="submit call-to-action" type="reset">Réinitialiser</button>
                     </p>
-        
-        
-                </div>        
-        
-                <p class="col-2">
-                    <button class="submit call-to-action" type="submit">Réservez</button>
-                    <button class="submit call-to-action" type="reset">Réinitialiser</button>
-                </p>
-                <div>
-                </div>
-        
-            </form>
-          </div>
+                    <div>
+                    </div>
+
+                </form>
+            </div>
         </div>
-      
-      </div>
+
+    </div>
 </div>
 <div class="footer">
     <ol class="contacts">
-        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/WA_icon.png" alt="WA_icon"> +216 00 111 222 </li>
-        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/FB_icon.png" alt="FB_icon"> LCR.official </li>
-        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/IG_icon.png" alt="IG_icon"> @LCR </li>
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/WA_icon.png" alt="WA_icon"> +216
+            00 111 222 </li>
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/FB_icon.png" alt="FB_icon">
+            LCR.official </li>
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/IG_icon.png" alt="IG_icon"> @LCR
+        </li>
     </ol>
 </div>

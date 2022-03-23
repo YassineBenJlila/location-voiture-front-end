@@ -10,6 +10,7 @@ export class BoardUserComponent implements OnInit {
   cars: any;
   regions: any;
   car_id : any;
+  username : any;
   baseUrl = "/assets/images/cars/";
   constructor() { }
 
@@ -70,8 +71,8 @@ export class BoardUserComponent implements OnInit {
       {id: id++, label: 'Djerba' },
     ]
 
-    console.table(this.cars);
-    console.table(this.regions);
+    // console.table(this.cars);
+    // console.table(this.regions);
 
     // Get the <span> element that closes the modal
     var modal = document.getElementById("myModal") as HTMLDivElement;
@@ -82,6 +83,8 @@ export class BoardUserComponent implements OnInit {
       modal.style.opacity = "0";
       modal.style.pointerEvents = "none";
     }
+
+    this.username = sessionStorage.getItem('loggedIn');
 
     this.minDate();    
 

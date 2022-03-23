@@ -10,8 +10,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './auth/auth.interceptor';
-import { BoardAdminComponent } from './content/board-admin/board-admin.component';
 import { BoardUserComponent } from './content/board-user/board-user.component';
+import { ProfilComponent } from './content/profil/profil.component';
+import { ReservationsComponent } from './content/reservations/reservations.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { BoardUserComponent } from './content/board-user/board-user.component';
     PublicPageComponent,
     LoginComponent,
     RegisterComponent,
-    BoardAdminComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    ProfilComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,

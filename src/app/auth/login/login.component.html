@@ -1,5 +1,5 @@
 <div class="container">
-  <form #templateForm="ngForm" (ngSubmit)="onLogin(templateForm)">
+  <form #templateForm="ngForm">
 
       <div class="creds">
           <p>
@@ -14,10 +14,12 @@
       </div>
 
 
+      <p class="error" innerHTML="{{error}}"> </p>
 
       <p>
-          <button class="submit call-to-action" [routerLink]="['/user-board']" type="submit">Connecter</button>
+          <button class="submit call-to-action" (click)="signIn()" type="submit">Connecter</button>
       </p>
 
   </form>
+
 </div>

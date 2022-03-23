@@ -78,6 +78,9 @@ input {
     background-color: $rose;
 }
 
+.error {
+    color: $rose;
+}
 
 @media screen and (max-width:900px) {
     form {

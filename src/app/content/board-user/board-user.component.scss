@@ -8,6 +8,25 @@ $blue: rgb(109,201,255);
     color: $rose;
 }
 
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.top-section > h1 {
+    display: inline-block;
+    margin: 0;
+}
+
+.search {
+    display: inline-flex;
+    float: right;
+    width: 30%;
+    min-width: 200px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 320px));
@@ -232,9 +251,22 @@ select *:nth-child(2n) {
     border-radius: 5px;
     cursor: pointer;
     filter: drop-shadow(0 0 5px rgba($black, .2) );
-    transition: filter 250ms;
-    
+    transition: filter 250ms;   
 }
+
+#paiement-container {
+    margin-top: 1rem;
+}
+.paiement-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.paiement-container > * {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin: 0 1rem;
+}
+
 .call-to-action:hover {
     filter: drop-shadow(0 0 5px rgba($black, .5) );
 }

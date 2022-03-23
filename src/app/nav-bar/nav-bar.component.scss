@@ -73,6 +73,7 @@ nav {
     width: 100%;
     margin: 5rem 0;
     justify-content: center;
+    align-items: center;
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -81,6 +82,67 @@ nav {
 }
 .router-link-active {
     color: $rose;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-links-con:hover > .popup {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 250ms 0s;
+    visibility: visible;
+}
+
+.popup {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate( -25%, calc(100% + 15px) );
+    height: 45px;
+    width: 120px;
+    background: $rose;
+    border-radius: 10px;
+    color: white;
+    transition: all 250ms 1s;
+}
+.popup:hover {
+    opacity: 1;
+    visibility: visible;
+    transition: all 250ms 0s;
+    color: white;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    border-top: 20px solid $rose;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    transform: translate( -75%, calc(-100% - 5px) ) rotate(180deg);
+}
+
+.user-profile-pic {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    background: $rose;
+    border-radius: 50%;
+    margin-right: -24px;
+}
+.user-profile-pic::after {
+    content: 'GB';
+    color: white;
+    font-size: 1.1rem;
 }
 
 //------- hamburger btn --------
@@ -181,6 +243,9 @@ nav {
         color: $black;
         margin: 0 1vw;
     }
+    .user-profile-pic {
+        margin-right: 0px;
+    }
 }
 
 @media screen and (max-width:650px) {
@@ -196,6 +261,9 @@ nav {
     .nav-links, .nav-links-con {
         margin: 0 .5rem;
         display: none;
+    }
+    .user-profile-pic {
+        margin-right: 10px;
     }
     .brand {
         position: fixed;

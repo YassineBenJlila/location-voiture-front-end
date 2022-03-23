@@ -1,24 +1,24 @@
-<nav class="navbar">
+<nav *ngIf="(loggedIn && loggedIn!= ''); else loggedOut" class="navbar">
     <input class="checkbox" type="checkbox" name="" id="" />
 
-    <a class="brand" (click)="hideMenu()" href="/welcome">LCR</a>
+    <a class="brand" (click)="hideMenu()" href="/user-board">LCR</a>
     <div class="nav-links">
-        <a class="nav-link" href="/welcome#about" routerLinkActive="router-link-active" >A propos</a>
-        <a class="nav-link" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
-        <a class="nav-link" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+        <a class="nav-link" [routerLink]="['/categories']" routerLinkActive="router-link-active"  routerLinkActive="router-link-active">Catégories</a>
+        <a class="nav-link" [routerLink]="['/reservations']" routerLinkActive="router-link-active" >Réservations</a>
     </div>
     <div class="nav-links-con">
-        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
-        <a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+        <a class="profile" [routerLink]="['/profile']" routerLinkActive="router-link-active"> <span class="user-profile-pic"></span> <span class="nav-link">Profil</span></a>
+        <a class="popup nav-link" (click)="logout()" [routerLink]="['/login']">Déconnexion</a>
     </div>
 
     <div class="mobile-nav-links">
-        <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#about" routerLinkActive="router-link-active">A propos</a>
-        <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
-        <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+        <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/categories']" routerLinkActive="router-link-active">Catégories</a>
+        <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/reservations']" routerLinkActive="router-link-active">Réservations</a>
 
-        <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
-        <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+        <div class="">
+            <a class="profile mobile-nav-link" (click)="hideMenu()" [routerLink]="['/profile']" routerLinkActive="router-link-active"><span>Profil</span></a>
+            <a class="popup mobile-nav-link" (click)="hideMenu()" [routerLink]="['/login']">Déconnexion</a>
+        </div>
     </div>
 
     <div class="hamburger-lines">
@@ -27,3 +27,35 @@
         <span class="line line3"></span>
     </div>
 </nav>
+
+<ng-template #loggedOut>
+    <nav class="navbar">
+        <input class="checkbox" type="checkbox" name="" id="" />
+    
+        <a class="brand" (click)="hideMenu()" href="/welcome">LCR</a>
+        <div class="nav-links">
+            <a class="nav-link" href="/welcome#about" routerLinkActive="router-link-active" >A propos</a>
+            <a class="nav-link" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
+            <a class="nav-link" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+        </div>
+        <div class="nav-links-con">
+            <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
+            <a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+        </div>
+    
+        <div class="mobile-nav-links">
+            <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#about" routerLinkActive="router-link-active">A propos</a>
+            <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#services" routerLinkActive="router-link-active">Services</a>
+            <a class="mobile-nav-link" (click)="hideMenu()" href="/welcome#contact" routerLinkActive="router-link-active">Contact</a>
+    
+            <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
+            <a class="mobile-nav-link" (click)="hideMenu()" [routerLink]="['/register']" routerLinkActive="router-link-active">Inscription</a>
+        </div>
+    
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </nav>
+</ng-template>
