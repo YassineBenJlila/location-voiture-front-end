@@ -1,0 +1,65 @@
+<div class="container">
+    <form #templateForm="ngForm">
+
+        <div class="personal">
+            <div class="user-profile-pic"></div>
+            <div class="col-2">
+                <p>
+                    <label for="firstname">Prenom </label>
+                    <input type="text" id="firstname" name="firstname" required placeholder="Veuillez saisir votre Prénom">
+                </p>
+                <p>
+                    <label for="lastname">Nom </label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Veuillez saisir votre Nom">
+                </p>
+            </div>
+
+            <p>
+                <label for="email">Email </label>
+                <input type="text" id="email" name="email" placeholder="Veuillez saisir votre Email">
+            </p>
+
+            <p>
+                <label for="state">Date de naissance </label>
+                <input type="date" class="form-control" min="1930-01-01" name="birthDate" id="birthDate">
+            </p>
+
+            <p>
+                <label for="address">Adresse </label>
+                <input type="text" id="address" class="form-control" name="address" placeholder="Veuillez saisir votre Adresse">
+            </p>
+
+            <p>
+                <label for="tel">Numéro de téléphone </label>
+                <input type="text" class="form-control" id="tel" name="tel" placeholder="Veuillez saisir votre Numéro de téléphone">
+            </p>
+
+        </div>
+
+        <div class="creds">
+            <p>
+                <label for="pass">Ancien mot de passe </label>
+                <input type="password" id="prev-pass" name="pass" placeholder="Veuillez saisir votre Mot de passe">
+            </p>
+            <p>
+                <label for="pass">Changez mot de passe </label>
+                <input type="password" id="pass" name="pass" placeholder="Veuillez saisir votre Mot de passe">
+            </p>
+
+            <p>
+                <label for="pass-conf">Confirmez le mot de passe </label>
+                <input type="password" id="pass-conf" name="pass-conf" placeholder="Veuillez confirmer votre Mot de passe">
+            </p>
+        </div>
+
+
+
+        <p>
+            <button class="submit call-to-action" type="submit">Appliquer les modifications</button>
+            <button class="submit call-to-action" type="reset">Annuler</button>
+        </p>
+        <div>
+        </div>
+
+    </form>
+</div>

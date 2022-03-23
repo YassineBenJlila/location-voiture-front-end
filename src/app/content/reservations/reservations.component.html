@@ -1,0 +1,63 @@
+<div class="container">
+    <article *ngFor="let reservation of reserved_cars; index as i">
+        <div class="grid-2">
+            <div>
+                <p>Model de véhicule: </p><h3>{{reservation?.model}}</h3>
+                <p>Periode: </p><h3>{{reservation?.period}} Jour(s)</h3>
+                <p>Prix totale: </p><h3>{{reservation?.totalPrice}} dt</h3>
+            </div>
+            <img class="photo" src="{{reservation?.photo}}" alt="">
+        </div>
+        <div class="progress-container">
+            <p>
+                <label for="etat">Etat d'avancement: </label>
+            </p>
+            <progress name="etat" value="50" max="100"></progress>
+            <div>
+                <div>Pris en charge </div>
+                <div>En cours  </div>
+                <div>Traité </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" (click)="showModal(i)" class="call-to-action">Annuler</button>
+        </div>
+    </article>
+
+        <!-- dialog with form -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-form-preview">
+                    <img class="car-img" src="{{reserved_cars[car_id]?.photo}}" alt="{{reserved_cars[car_id]?.model}}">
+                    <p *ngIf="reserved_cars[car_id]" class="car-model">{{reserved_cars[car_id]?.model}}</p>
+                </div>
+                <div class="modal-form">
+                    <form #templateForm="ngForm">
+    
+                        <p style="font-size: 1.5rem; text-align: center;" class="error">Voulez-vous vraiment annuler votre réservation ?</p>
+
+                        <p class="col-2">
+                            <button class="submit call-to-action" (click)="remove(car_id)"  routerLinkActive="router-link-active"  type="submit">Oui</button>
+                            <button class="submit call-to-action" (click)="hideModal()" type="reset">Non, Je le garde</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+        
+</div>
+
+<div class="footer">
+    <ol class="contacts">
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/WA_icon.png" alt="WA_icon"> +216
+            00 111 222 </li>
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/FB_icon.png" alt="FB_icon">
+            LCR.official </li>
+        <li class="contact-item"> <img class="contact-icon" src="/assets/images/contact/IG_icon.png" alt="IG_icon"> @LCR
+        </li>
+    </ol>
+</div>

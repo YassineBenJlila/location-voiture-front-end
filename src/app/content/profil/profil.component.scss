@@ -1,0 +1,130 @@
+//Colors
+$black: black;
+$white: white;
+$rose: rgb(217, 2, 102);
+$blue: rgb(109,201,255);
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.user-profile-pic {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    background: $rose;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.user-profile-pic::before {
+    content: 'GB';
+    color: white;
+    font-size: 2.5rem;
+}
+.user-profile-pic:hover::after {
+    content: 'Changez photo';
+    display: flex;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    // transform: translateX(25px);
+    color: white;
+    font-size: 1.1rem;
+    background-color: rgba(black, .5);
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+p {
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-1 {
+    display: grid;
+    grid-template-columns: 100%;
+}
+.col-2 {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    justify-content: space-between;
+}
+
+.personal, .creds,
+.personal > p, .creds > p {
+    margin: .5rem 0;
+}
+
+.creds {
+    border-top: solid 1px rgb(109,201,255);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+}
+
+label {
+    margin-bottom: .5rem;
+    white-space: nowrap;
+}
+
+input {
+    border: solid 1px $blue;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.required {
+    color: $rose;
+}
+
+.call-to-action {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    margin-left: 0;
+    color: $white;
+    font-weight: 200;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba($black, .2) );
+    transition: filter 250ms;
+    
+}
+.call-to-action:hover {
+    filter: drop-shadow(0 0 5px rgba($black, .5) );
+}
+.call-to-action:active {
+    filter: drop-shadow(0 0 5px rgba($black, .7) );
+}
+
+.call-to-action[type="submit"] {
+    background-color: $rose;
+}
+.call-to-action[type="reset"] {
+    background-color: $blue;
+}
+
+
+@media screen and (max-width:900px) { 
+    form {
+        width: 80vw;
+    }
+}
+@media screen and (max-width:560px) { 
+    form {
+        width: 90vw;
+    }
+}
