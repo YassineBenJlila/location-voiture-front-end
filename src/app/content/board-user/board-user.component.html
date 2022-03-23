@@ -8,7 +8,7 @@
     <div class="grid">
         <div *ngFor="let car of cars" (click)="showModal(car.id)" class="car-container">
             <img class="car-img" src="{{car.photo}}" alt="{{car.model}}">
-            <p class="car-model">{{car.model}} : {{car.price}}/jour</p>
+            <p class="car-model">{{car.model}} : {{car.price}} dt/jour</p>
             <p class="car-description">{{car.description}}</p>
         </div>
     </div>
@@ -66,8 +66,9 @@
 
                     </div>
 
+                    <p class="error" innerHTML="{{error}}"></p>
                     <p class="col-2">
-                        <button class="submit call-to-action" [routerLink]="['/reservations']" routerLinkActive="router-link-active"  type="submit">Réservez</button>
+                        <button class="submit call-to-action" (click)="reserve(cars[car_id])" routerLinkActive="router-link-active"  type="submit">Réservez</button>
                         <button class="submit call-to-action" type="reset">Réinitialiser</button>
                     </p>
                     <div>

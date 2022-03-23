@@ -11,6 +11,10 @@ export class BoardUserComponent implements OnInit {
   regions: any;
   car_id : any;
   username : any;
+  reserved_cars : any;
+
+  error = '';
+  
   baseUrl = "/assets/images/cars/";
   constructor() { }
 
@@ -18,46 +22,46 @@ export class BoardUserComponent implements OnInit {
     var id = 0;
     this.cars = [
       {
-        id: id++, model: 'Mazda', photo: this.baseUrl + 'mazda.png', price: '150dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Mazda', photo: this.baseUrl + 'mazda.png', price: 150, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Mercedes', photo: this.baseUrl + 'mercedes.png', price: '320dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Mercedes', photo: this.baseUrl + 'mercedes.png', price: 320, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'F-Type', photo: this.baseUrl + 'Jaguar-F-TYPE.png', price: '350dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'F-Type', photo: this.baseUrl + 'Jaguar-F-TYPE.png', price: 350, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Audi RS7', photo: this.baseUrl + 'audi_rs7.png', price: '350dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Audi RS7', photo: this.baseUrl + 'audi_rs7.png', price: 350, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Range Rover', photo: this.baseUrl + 'rangerover.png', price: '300dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Range Rover', photo: this.baseUrl + 'rangerover.png', price: 300, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Zuzuki', photo: this.baseUrl + 'zuzuki.png', price: '100dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Zuzuki', photo: this.baseUrl + 'zuzuki.png', price: 100, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Toyota Camry', photo: this.baseUrl + 'toyota_camry.png', price: '120dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Toyota Camry', photo: this.baseUrl + 'toyota_camry.png', price: 120, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'VW Golf 8', photo: this.baseUrl + 'vw_golf8.png', price: '250dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'VW Golf 8', photo: this.baseUrl + 'vw_golf8.png', price: 250, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Porsche', photo: this.baseUrl + 'porsche.png', price: '500dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Porsche', photo: this.baseUrl + 'porsche.png', price: 500, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Mercedes G Class', photo: this.baseUrl + 'mercedes_Gclass.png', price: '400dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Mercedes G Class', photo: this.baseUrl + 'mercedes_Gclass.png', price: 400, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'BMW M3', photo: this.baseUrl + 'BMW_m3.png', price: '350dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'BMW M3', photo: this.baseUrl + 'BMW_m3.png', price: 350, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'BMW i8', photo: this.baseUrl + 'BMW_i8.png', price: '450dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'BMW i8', photo: this.baseUrl + 'BMW_i8.png', price: 450, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Nissan GTR', photo: this.baseUrl + 'nissan_gtr.png', price: '400dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Nissan GTR', photo: this.baseUrl + 'nissan_gtr.png', price: 400, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
       {
-        id: id++, model: 'Ford Mustang', photo: this.baseUrl + 'ford_mustang.png', price: '400dt', description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+        id: id++, model: 'Ford Mustang', photo: this.baseUrl + 'ford_mustang.png', price: 400, description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
       },
     ]
 
@@ -88,6 +92,9 @@ export class BoardUserComponent implements OnInit {
 
     this.minDate();    
 
+    this.reserved_cars = sessionStorage.getItem('reserved_cars')?sessionStorage.getItem('reserved_cars'):null;
+    this.reserved_cars = JSON.parse(this.reserved_cars);    
+
   }
 
   showModal(id: any): void {
@@ -113,6 +120,22 @@ export class BoardUserComponent implements OnInit {
       }
     }
   }
+  
+  hideModal(id: any): void {
+    // document.querySelector("#modal-dialog")?.showModal();
+    // console.log(id);
+    this.car_id = id;
+
+    // Get the modal
+    var modal = document.getElementById("myModal") as HTMLDivElement;
+    var modal_content = document.querySelector(".modal-content") as HTMLDivElement;
+
+    // When the user clicks the button, open the modal 
+    modal.style.opacity = "0";
+    modal.style.pointerEvents = "none";
+    modal_content.style.transform = "scale(0.8)";
+
+  }
 
   minDate() {
     var today: any;
@@ -129,5 +152,56 @@ export class BoardUserComponent implements OnInit {
     if (minDate > toDate.value)
     toDate.value = minDate;
     // console.log(minDate);
+  }
+
+  calculatePeriod(fromDate: any, toDate: any): number {
+    fromDate = new Date(fromDate);
+    toDate = new Date(toDate);
+
+    var period = toDate.getTime() - fromDate.getTime();
+
+    return ( period / (1000 * 60 * 60 * 24) ) + 1;
+  }
+
+  reserve(car: any) {
+    if (car==null) return this.error = 'Erreur: Aucun véhicule sélectionné';
+    // get period
+    var fromDate : any;
+    var toDate : any;
+    var region : any;
+    fromDate = (document.querySelector('#fromDate') as HTMLInputElement).value;
+    toDate = (document.querySelector('#toDate') as HTMLInputElement).value;
+    region = (document.querySelector('#region') as HTMLInputElement).value;
+
+    var period = this.calculatePeriod(fromDate, toDate);
+
+    if (!fromDate || !toDate) return this.error = 'Veuillez choisir une période';
+    if (!region) return this.error = 'Veuillez choisir une region';
+    
+    this.error = '';
+    // get car array
+    // console.log(car);
+    
+    this.reserved_cars = sessionStorage.getItem('reserved_cars')?sessionStorage.getItem('reserved_cars'):'[]';
+    // console.log(this.reserved_cars);
+    this.reserved_cars = JSON.parse(this.reserved_cars);
+
+
+    // Add period to car array
+    car.period = period;
+    console.log(car);
+
+    // Add Price to car array
+    var totalPrice = car.price * period;
+    car.totalPrice = totalPrice;
+
+    // Add Region to car array
+    car.region = region;
+    
+
+    this.reserved_cars.push(car);
+    // console.table(this.reserved_cars);
+    
+    return sessionStorage.setItem('reserved_cars', JSON.stringify(this.reserved_cars) );
   }
 }

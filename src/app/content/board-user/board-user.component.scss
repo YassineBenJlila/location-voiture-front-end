@@ -254,6 +254,10 @@ select *:nth-child(2n) {
     transition: filter 250ms;   
 }
 
+.error {
+    color: $rose;
+}
+
 #paiement-container {
     margin-top: 1rem;
 }
